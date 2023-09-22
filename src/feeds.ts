@@ -1,20 +1,18 @@
 import { EdDSAPCDPackage } from "@pcd/eddsa-pcd";
 import { EdDSATicketPCD, EdDSATicketPCDPackage } from "@pcd/eddsa-ticket-pcd";
+import { FeedHost, FeedRequest, FeedResponse } from "@pcd/passport-interface";
+import {
+  PCDPermissionType,
+  ReplaceInFolderPermission,
+  PCDActionType,
+  ReplaceInFolderAction
+} from "@pcd/pcd-collection";
 import { ArgumentTypeName, SerializedPCD } from "@pcd/pcd-types";
 import {
   SemaphoreSignaturePCDPackage,
   SemaphoreSignaturePCDTypeName
 } from "@pcd/semaphore-signature-pcd";
 import { v4 as uuid } from "uuid";
-import { FeedHost } from "./feedhost";
-import {
-  FeedRequest,
-  FeedResponse,
-  PCDActionType,
-  PCDPermissionType,
-  ReplaceInFolderAction,
-  ReplaceInFolderPermission
-} from "./pcdtypes";
 
 EdDSAPCDPackage.init?.({});
 EdDSATicketPCDPackage.init?.({});
