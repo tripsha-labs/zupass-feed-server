@@ -1,0 +1,6 @@
+{
+  "extends": "@pcd/tsconfig/ts-library.json",
+  "include": ["**/*.ts", "**/*.d.ts"],
+  "exclude": ["node_modules"],
+  "compilerOptions": {}
+}
