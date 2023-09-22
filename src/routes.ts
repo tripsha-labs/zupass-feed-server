@@ -1,6 +1,6 @@
+import { FeedRequest, ListFeedsRequest } from "@pcd/passport-interface";
 import { Router } from "express";
 import { feedHost } from "./feeds";
-import { FeedRequest, ListFeedsRequest } from "./pcdtypes";
 
 const routes = Router();
 

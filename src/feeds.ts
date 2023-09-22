@@ -1,17 +1,14 @@
 import { EdDSAPCDPackage } from "@pcd/eddsa-pcd";
 import { EdDSATicketPCD, EdDSATicketPCDPackage } from "@pcd/eddsa-ticket-pcd";
+import { EmailPCDPackage, EmailPCDTypeName } from "@pcd/email-pcd";
 import { FeedHost, FeedRequest, FeedResponse } from "@pcd/passport-interface";
 import {
-  PCDPermissionType,
-  ReplaceInFolderPermission,
   PCDActionType,
-  ReplaceInFolderAction
+  PCDPermissionType,
+  ReplaceInFolderAction,
+  ReplaceInFolderPermission
 } from "@pcd/pcd-collection";
 import { ArgumentTypeName, SerializedPCD } from "@pcd/pcd-types";
-import {
-  SemaphoreSignaturePCDPackage,
-  SemaphoreSignaturePCDTypeName
-} from "@pcd/semaphore-signature-pcd";
 import { v4 as uuid } from "uuid";
 
 EdDSAPCDPackage.init?.({});
@@ -30,21 +27,24 @@ export const feedHost = new FeedHost(
             type: PCDPermissionType.ReplaceInFolder
           } as ReplaceInFolderPermission
         ],
-        credentialType: SemaphoreSignaturePCDTypeName
+        credentialType: EmailPCDTypeName
       },
       handleRequest: async (
-        req: FeedRequest<typeof SemaphoreSignaturePCDPackage>
+        req: FeedRequest<typeof EmailPCDPackage>
       ): Promise<FeedResponse> => {
         if (req.pcd) {
-          const pcd = await SemaphoreSignaturePCDPackage.deserialize(
-            req.pcd.pcd
-          );
-          const verified = await SemaphoreSignaturePCDPackage.verify(pcd);
+          const pcd = await EmailPCDPackage.deserialize(req.pcd.pcd);
+          const verified = await EmailPCDPackage.verify(pcd);
           if (verified) {
             return {
               actions: [
                 {
-                  pcds: [await issueTestPCD(pcd.claim.identityCommitment)],
+                  pcds: [
+                    await issueTestPCD(
+                      pcd.claim.emailAddress,
+                      pcd.claim.semaphoreId
+                    )
+                  ],
                   folder: "Testing",
                   type: PCDActionType.ReplaceInFolder
                 } as ReplaceInFolderAction
@@ -61,11 +61,12 @@ export const feedHost = new FeedHost(
 );
 
 async function issueTestPCD(
+  emailAddress: string,
   semaphoreId: string
 ): Promise<SerializedPCD<EdDSATicketPCD>> {
   const ticketData = {
     attendeeName: "test name",
-    attendeeEmail: "user@test.com",
+    attendeeEmail: emailAddress,
     eventName: "event",
     ticketName: "ticket",
     checkerEmail: "checker@test.com",
