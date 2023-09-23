@@ -9,7 +9,9 @@ import {
   ReplaceInFolderPermission
 } from "@pcd/pcd-collection";
 import { ArgumentTypeName, SerializedPCD } from "@pcd/pcd-types";
+import _ from "lodash";
 import { v4 as uuid } from "uuid";
+import { ZUPASS_PUBLIC_KEY } from "./main";
 
 EdDSAPCDPackage.init?.({});
 EdDSATicketPCDPackage.init?.({});
@@ -34,7 +36,9 @@ export const feedHost = new FeedHost(
       ): Promise<FeedResponse> => {
         if (req.pcd) {
           const pcd = await EmailPCDPackage.deserialize(req.pcd.pcd);
-          const verified = await EmailPCDPackage.verify(pcd);
+          const verified =
+            (await EmailPCDPackage.verify(pcd)) &&
+            _.isEqual(pcd.proof.eddsaPCD.claim.publicKey, ZUPASS_PUBLIC_KEY);
           if (verified) {
             return {
               actions: [
