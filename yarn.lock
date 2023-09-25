@@ -905,11 +905,6 @@
     styled-components "^5.3.9"
     uuid "^9.0.0"
 
-"@pcd/tsconfig@^0.6.2":
-  version "0.6.2"
-  resolved "https://registry.yarnpkg.com/@pcd/tsconfig/-/tsconfig-0.6.2.tgz#64d3b279eb69f40c58d218b628828b9c9e51ce33"
-  integrity sha512-sdva2fJW+fB1a4xQ63oNhDwSJFrNn1Rc5TyJpuSeRH48U7YAQOYkYiKJz1jlRW6Ak0QJaSDgVhBmzsIE2DmNIg==
-
 "@pcd/util@0.1.0":
   version "0.1.0"
   resolved "https://registry.yarnpkg.com/@pcd/util/-/util-0.1.0.tgz#2f8f63086710a78e11dc807a88acaf65eed81bcd"
@@ -985,6 +980,11 @@
     "@types/connect" "*"
     "@types/node" "*"
 
+"@types/circomlibjs@^0.1.2":
+  version "0.1.2"
+  resolved "https://registry.yarnpkg.com/@types/circomlibjs/-/circomlibjs-0.1.2.tgz#2d6021ea0680973f4b522dbb4f82401c81872f1f"
+  integrity sha512-frsB+ZOIRA3I76hcoOIdkKO9kO+ZE9hNVT/Z27Cw6/gv6X3dGzWnSbRZkwCQ9NwGUzFtQugL4AfBBWKU3Uv0bg==
+
 "@types/connect@*":
   version "3.4.36"
   resolved "https://registry.yarnpkg.com/@types/connect/-/connect-3.4.36.tgz#e511558c15a39cb29bd5357eebb57bd1459cd1ab"
@@ -1019,10 +1019,23 @@
     "@types/qs" "*"
     "@types/serve-static" "*"
 
+"@types/hoist-non-react-statics@*":
+  version "3.3.2"
+  resolved "https://registry.yarnpkg.com/@types/hoist-non-react-statics/-/hoist-non-react-statics-3.3.2.tgz#dc1e9ded53375d37603c479cc12c693b0878aa2a"
+  integrity sha512-YIQtIg4PKr7ZyqNPZObpxfHsHEmuB8dXCxd6qVcGuQVDK2bpsF7bYNnBJ4Nn7giuACZg+WewExgrtAJ3XnA4Xw==
+  dependencies:
+    "@types/react" "*"
+    hoist-non-react-statics "^3.3.0"
+
 "@types/http-errors@*":
   version "2.0.2"
   resolved "https://registry.yarnpkg.com/@types/http-errors/-/http-errors-2.0.2.tgz#a86e00bbde8950364f8e7846687259ffcd96e8c2"
   integrity sha512-lPG6KlZs88gef6aD85z3HNkztpj7w2R7HmR3gygjfXCQmsLloWNARFkMuzKiiY8FGdh1XDpgBdrSf4aKDiA7Kg==
+
+"@types/json-bigint@^1.0.2":
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/@types/json-bigint/-/json-bigint-1.0.2.tgz#6ee51d6c71fecd474b7e3f003aeb13d21227853e"
+  integrity sha512-ZXqZc1YeBj1B2my/a/f5PWpNemgIb1r5s3cALPvsMqoGEZ0NOEo1UxrSRUEZr0EtChy1BH/CuORiYuvYr4/4Fw==
 
 "@types/json-schema@^7.0.12":
   version "7.0.13"
@@ -1033,6 +1046,18 @@
   version "0.0.29"
   resolved "https://registry.yarnpkg.com/@types/json5/-/json5-0.0.29.tgz#ee28707ae94e11d2b827bcbe5270bcea7f3e71ee"
   integrity sha512-dRLjCWHYg4oaA77cxO64oO+7JwCwnIzkZPdrrC71jQmQtlhM556pwKo5bUzqvZndkVbeFLIIi+9TC40JNF5hNQ==
+
+"@types/libsodium-wrappers-sumo@^0.7.6":
+  version "0.7.6"
+  resolved "https://registry.yarnpkg.com/@types/libsodium-wrappers-sumo/-/libsodium-wrappers-sumo-0.7.6.tgz#3ebaf627ddb4957fd6417dd1823490cc2633f01d"
+  integrity sha512-86R2bYU/DKVWw3q2btxTUlFO3lYKLyodbCsxxSybNQonPzPxmQkNtKCYmkV0dWQ9ZQsGIOzNNPU9RjJUALjoEg==
+  dependencies:
+    "@types/libsodium-wrappers" "*"
+
+"@types/libsodium-wrappers@*":
+  version "0.7.11"
+  resolved "https://registry.yarnpkg.com/@types/libsodium-wrappers/-/libsodium-wrappers-0.7.11.tgz#4ac53b8a16a4c80d062e32b3849e9d5b8c2f92ed"
+  integrity sha512-8avZYJny690B6lFZQEDz4PEdCgC8D8qmGE/mhJBzCwzZvsqne61tCRbtJOhxsjYMItEZd3k4SoR4xKKLnI9Ztg==
 
 "@types/lodash@^4.14.199":
   version "4.14.199"
@@ -1054,6 +1079,23 @@
   resolved "https://registry.yarnpkg.com/@types/node/-/node-20.6.3.tgz#5b763b321cd3b80f6b8dde7a37e1a77ff9358dd9"
   integrity sha512-HksnYH4Ljr4VQgEy2lTStbCKv/P590tmPe5HqOnv9Gprffgv5WXAY+Y5Gqniu0GGqeTCUdBnzC3QSrzPkBkAMA==
 
+"@types/pako@^2.0.1":
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/@types/pako/-/pako-2.0.1.tgz#99e4b7ae6a8560c5928d7f31e89a394e1e6fd169"
+  integrity sha512-fXhui1fHdLrUR0KEyQsBzqdi3Z+MitnRcpI2eeFJyzaRdqO2miX/BDz2Hh0VdkBbrWprgcQ+ItFmbdKYdbMjvg==
+
+"@types/prop-types@*":
+  version "15.7.7"
+  resolved "https://registry.yarnpkg.com/@types/prop-types/-/prop-types-15.7.7.tgz#f9361f7b87fd5d8188b2c998db0a1f47e9fb391a"
+  integrity sha512-FbtmBWCcSa2J4zL781Zf1p5YUBXQomPEcep9QZCfRfQgTxz3pJWiDFLebohZ9fFntX5ibzOkSsrJ0TEew8cAog==
+
+"@types/qr-image@^3.2.7":
+  version "3.2.7"
+  resolved "https://registry.yarnpkg.com/@types/qr-image/-/qr-image-3.2.7.tgz#931c3c5b5451692265125c249810ce780d5a33c9"
+  integrity sha512-/7JEUztLbG89+amp/XRDM3kLvViC5yuARcX522UusW/wyVB13ku9lY1/14benZhX0AtYYAJmX76Ny79g8hPZzg==
+  dependencies:
+    "@types/node" "*"
+
 "@types/qs@*":
   version "6.9.8"
   resolved "https://registry.yarnpkg.com/@types/qs/-/qs-6.9.8.tgz#f2a7de3c107b89b441e071d5472e6b726b4adf45"
@@ -1063,6 +1105,20 @@
   version "1.2.4"
   resolved "https://registry.yarnpkg.com/@types/range-parser/-/range-parser-1.2.4.tgz#cd667bcfdd025213aafb7ca5915a932590acdcdc"
   integrity sha512-EEhsLsD6UsDM1yFhAvy0Cjr6VwmpMWqFBCb9w07wVugF7w9nfajxLuVmngTIpgS6svCnm6Vaw+MZhoDCKnOfsw==
+
+"@types/react@*", "@types/react@^18.2.22":
+  version "18.2.22"
+  resolved "https://registry.yarnpkg.com/@types/react/-/react-18.2.22.tgz#abe778a1c95a07fa70df40a52d7300a40b949ccb"
+  integrity sha512-60fLTOLqzarLED2O3UQImc/lsNRgG0jE/a1mPW9KjMemY0LMITWEsbS4VvZ4p6rorEHd5YKxxmMKSDK505GHpA==
+  dependencies:
+    "@types/prop-types" "*"
+    "@types/scheduler" "*"
+    csstype "^3.0.2"
+
+"@types/scheduler@*":
+  version "0.16.3"
+  resolved "https://registry.yarnpkg.com/@types/scheduler/-/scheduler-0.16.3.tgz#cef09e3ec9af1d63d2a6cc5b383a737e24e6dcf5"
+  integrity sha512-5cJ8CB4yAx7BH1oMvdU0Jh9lrEXyPkar6F9G/ERswkCuvP4KQZfZkSjcMbAICCpQTN4OuZn8tz0HiKv9TGZgrQ==
 
 "@types/semver@^7.5.0":
   version "7.5.2"
@@ -1095,6 +1151,15 @@
   version "0.0.30"
   resolved "https://registry.yarnpkg.com/@types/strip-json-comments/-/strip-json-comments-0.0.30.tgz#9aa30c04db212a9a0649d6ae6fd50accc40748a1"
   integrity sha512-7NQmHra/JILCd1QqpSzl8+mJRc8ZHz3uDm8YV1Ks9IhK0epEiTw8aIErbvH9PI+6XbqhyIQy3462nEsn7UVzjQ==
+
+"@types/styled-components@^5.1.27":
+  version "5.1.27"
+  resolved "https://registry.yarnpkg.com/@types/styled-components/-/styled-components-5.1.27.tgz#1915eedba0d52f26ba5a383fccb7fe50e2e71106"
+  integrity sha512-oY9c1SdztRRF0QDQdwXEenfAjGN4WGUkaMpx5hvdTbYYqw01qoY2GrHi+kAR6SVofynzD6KbGoF5ITP0zh5pvg==
+  dependencies:
+    "@types/hoist-non-react-statics" "*"
+    "@types/react" "*"
+    csstype "^3.0.2"
 
 "@types/uuid@^9.0.4":
   version "9.0.4"
@@ -1780,6 +1845,11 @@ css-to-react-native@^3.0.0:
     camelize "^1.0.0"
     css-color-keywords "^1.0.0"
     postcss-value-parser "^4.0.2"
+
+csstype@^3.0.2:
+  version "3.1.2"
+  resolved "https://registry.yarnpkg.com/csstype/-/csstype-3.1.2.tgz#1d4bf9d572f11c14031f0436e1c10bc1f571f50b"
+  integrity sha512-I7K1Uu0MBPzaFKg4nI5Q7Vs2t+3gWWW648spaF+Rg7pI9ds18Ugn+lvg4SHczUdKlHI5LWBXyqfS8+DufyBsgQ==
 
 damerau-levenshtein@^1.0.8:
   version "1.0.8"
@@ -2790,7 +2860,7 @@ hmac-drbg@^1.0.1:
     minimalistic-assert "^1.0.0"
     minimalistic-crypto-utils "^1.0.1"
 
-hoist-non-react-statics@^3.0.0:
+hoist-non-react-statics@^3.0.0, hoist-non-react-statics@^3.3.0:
   version "3.3.2"
   resolved "https://registry.yarnpkg.com/hoist-non-react-statics/-/hoist-non-react-statics-3.3.2.tgz#ece0acaf71d62c2969c2ec59feff42a4b1a85b45"
   integrity sha512-/gGivxi8JPKWNm/W0jSmzcMPpfpPLc3dY/6GxhX2hQ9iGj3aDfklV4ET7NjKpSinLpJ5vafa9iiGIEZg10SfBw==
